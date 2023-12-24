@@ -16,13 +16,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className={`flex min-h-screen flex-col justify-between bg-black`}>
+        <div className={`flex h-full flex-col justify-between bg-black`}>
 
-          <div className={`flex min-h-screen p-7`}>
+          <div className={`flex h-screen p-5`}>
 
-            <div className={`flex grow border border-black`}>
+            <div className={`flex w-full h-full border`}>
 
-                   <div className={`flex grow`}>
+                   <div className={`flex w-full`}>
 
                        {/*<Canvas>*/}
                        {/*    <Cloud*/}
@@ -35,16 +35,16 @@ export default function RootLayout({ children }) {
                        {/*     />*/}
                        {/*</Canvas>*/}
                        <Canvas>
-                        <PerspectiveCamera makeDefault fov={75} position={[0,2,3]} />
+                        <PerspectiveCamera makeDefault fov={75} position={[0.5,1.7,1]} />
                         <ambientLight />
                         <pointLight color="#00b3ff" intensity={3} position={[0.2,6, 6]} />
                         <Plane />
-                        <Sparkles count={100} speed={0.1} color="#008080" size={0.5} scale={5}/>
-                        <OrbitControls />
+                        <Sparkles count={200} speed={0.2} color="#008080" size={0.5} scale={6}/>
+                        {/*<OrbitControls />*/}
                     </Canvas>
 
                    </div>
-                <div className={'absolute p-7'}>
+                <div className={'absolute p-5 overflow-auto max-h-full'}>
                     {children}
                 </div>
 
@@ -66,7 +66,7 @@ function Plane() {
     const geometry = new THREE.PlaneGeometry(15,10,128,128);
     const material = new THREE.MeshStandardMaterial(
         {
-            color: "#008080",
+            color: "#00aaaa",
             // map: landscape,
             displacementMap: height,
             displacementScale: 1.7,
@@ -80,7 +80,7 @@ function Plane() {
 
     const meshRef = useRef();
     useFrame(() => {{
-        meshRef.current.rotation.z -= 0.0005
+        meshRef.current.rotation.z -= 0.001
     }})
 
 

@@ -8,7 +8,7 @@ import {Cloud} from "@react-three/drei"
 
 export default function Home() {
   return (
-    <div className={'grow'}>
+    <div className={'w-full'}>
         {/*<div className={'flex grow min-h-screen'}>*/}
         {/*      <Canvas>*/}
         {/*           <Cloud*/}

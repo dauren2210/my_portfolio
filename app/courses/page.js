@@ -1,11 +1,11 @@
 export default function Page() {
     return (
-        <div>
+        <div className={'relative'}>
             <p className={`text-3xl font-thin`}>
                     Courses
             </p>
-            <div className={'pt-7'}>
-                <div className={'flex flex-row'}>
+            <div className={'pt-7 max-h-full '}>
+                <div className={'flex'}>
                     <div>
                         <p className={'text-2xl font-light'}>Math Courses:</p>
                         <p className={'pl-3 text-xl font-light'}>Lectures:</p>
