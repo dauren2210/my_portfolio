@@ -16,11 +16,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className={`flex h-full flex-col justify-between bg-black`}>
+        <div className={`flex h-full w-full flex-col justify-between bg-black`}>
 
           <div className={`flex h-screen p-5`}>
 
-            <div className={`flex w-full h-full border`}>
+            <div className={`flex relative w-full h-full border`}>
 
                    <div className={`flex w-full`}>
 
@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
                     </Canvas>
 
                    </div>
-                <div className={'absolute p-5 overflow-auto max-h-full'}>
+                <div className={'absolute h-full w-full p-5'}>
                     {children}
                 </div>
 
