@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <div className={`flex h-full w-full flex-col justify-between`}>
 
-          <div className={`flex h-screen p-5`}>
+          <div className={`flex h-screen p-3`}>
 
             <div className={`flex relative w-full h-full border`}>
 
