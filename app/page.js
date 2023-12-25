@@ -57,9 +57,31 @@ export default function Home() {
         </div>
 
         <div className={'absolute right-5 top-5 space-y-2'}>
-            <div><a href=''><img src='icons_black/Gmail_black.png' width={20} height={20}/></a></div>
-            <div><a href='https://github.com/dauren2210'><img src='icons_black/Github_black.png' width={20} height={20}/></a></div>
-            <div><a href='https://www.linkedin.com/in/dtursynbek22/'><img src='icons_black/LinkedIN_black.png' width={20} height={20}/></a></div>
+            <div>
+                <a href=''>
+                    <picture>
+                        <source srcset='icons_white/Gmail_white.png' media="(prefers-color-scheme: dark)" />
+                            <img src='icons_black/Gmail_black.png' width={20} height={20} />
+                    </picture>
+
+                </a>
+            </div>
+            <div>
+                <a href='https://github.com/dauren2210'>
+                    <picture>
+                        <source srcset='icons_white/Github_white.png' media="(prefers-color-scheme: dark)"/>
+                            <img src='icons_black/Github_black.png' width={20} height={20}/>
+                    </picture>
+                </a>
+            </div>
+            <div>
+                <a href='https://www.linkedin.com/in/dtursynbek22/'>
+                    <picture>
+                        <source srcset='icons_white/LinkedIN_white.png' media="(prefers-color-scheme: dark)"/>
+                            <img src='icons_black/LinkedIN_black.png' width={20} height={20}/>
+                    </picture>
+                </a>
+            </div>
         </div>
 
       </div>
