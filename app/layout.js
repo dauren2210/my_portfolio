@@ -2,7 +2,7 @@
 import './globals.css'
 
 import {Canvas, useFrame} from "@react-three/fiber"
-import {Cloud, OrbitControls, PerspectiveCamera, Sparkles} from "@react-three/drei"
+import {Cloud, OrbitControls, PerspectiveCamera, SoftShadows, Sparkles} from "@react-three/drei"
 import {useRef} from "react";
 import * as THREE from "three";
 
@@ -16,30 +16,21 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className={`flex h-full w-full flex-col justify-between bg-black`}>
+        <div className={`flex h-full w-full flex-col justify-between`}>
 
           <div className={`flex h-screen p-5`}>
 
             <div className={`flex relative w-full h-full border`}>
 
                    <div className={`flex w-full`}>
-
-                       {/*<Canvas>*/}
-                       {/*    <Cloud*/}
-                       {/*        texture={"public/cloud.png"}*/}
-                       {/*       opacity={0.06}*/}
-                       {/*       speed={0.24} // Rotation speed*/}
-                       {/*       width={10} // Width of the full cloud*/}
-                       {/*       depth={0} // Z-dir depth*/}
-                       {/*       segments={7} // Number of particles*/}
-                       {/*     />*/}
-                       {/*</Canvas>*/}
                        <Canvas>
-                        <PerspectiveCamera makeDefault fov={75} position={[0.5,1.7,1]} />
+                        <PerspectiveCamera makeDefault fov={75} position={[-1,1,2]} />
                         <ambientLight />
-                        <pointLight color="#00b3ff" intensity={3} position={[0.2,6, 6]} />
+                           <directionalLight castShadow position={[2.5,8,5]}></directionalLight>
+                        {/*<pointLight color="#00b3ff" intensity={3} position={[0.2,6, 6]} />*/}
+                        {/*   <SoftShadows />*/}
                         <Plane />
-                        <Sparkles count={200} speed={0.2} color="#008080" size={0.5} scale={6}/>
+                        <Sparkles count={200} speed={0.2} color="#000000" size={0.5} scale={6}/>
                         {/*<OrbitControls />*/}
                     </Canvas>
 
@@ -66,27 +57,30 @@ function Plane() {
     const geometry = new THREE.PlaneGeometry(15,10,128,128);
     const material = new THREE.MeshStandardMaterial(
         {
-            color: "#00aaaa",
+            color: "#aaaaaa",
             // map: landscape,
             displacementMap: height,
-            displacementScale: 1.7,
+            displacementScale: 1.69,
             alphaMap: alpha,
             transparent: true,
             depthTest: false,
-            wireframe: true
+            wireframe: false
         }
     );
     const mesh = new THREE.Mesh( geometry, material );
 
     const meshRef = useRef();
     useFrame(() => {{
-        meshRef.current.rotation.z -= 0.001
+        // meshRef.current.rotation.z -= 0.001
+        meshRef.current.rotation.x -= 0
+        meshRef.current.rotation.y -= 0
+        meshRef.current.rotation.z -= 0.0005
     }})
 
 
 
     return (
-        <mesh rotation={new THREE.Euler(-1.5, 0, -0.9)} ref={meshRef}>
+        <mesh rotation={new THREE.Euler(-1, -0.5, 0)} ref={meshRef}>
 
                 <primitive object={mesh} />
 

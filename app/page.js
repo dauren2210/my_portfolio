@@ -2,25 +2,10 @@
 import Image from 'next/image'
 import Link from "next/link";
 
-import {Canvas} from "@react-three/fiber"
-import {Cloud} from "@react-three/drei"
-
 
 export default function Home() {
   return (
-    <div className={'w-full'}>
-        {/*<div className={'flex grow min-h-screen'}>*/}
-        {/*      <Canvas>*/}
-        {/*           <Cloud*/}
-        {/*               texture={"app/cloud.png"}*/}
-        {/*              opacity={0.1}*/}
-        {/*              speed={0.2} // Rotation speed*/}
-        {/*              width={10} // Width of the full cloud*/}
-        {/*              depth={0} // Z-dir depth*/}
-        {/*              segments={5} // Number of particles*/}
-        {/*            />*/}
-        {/*       </Canvas>*/}
-        {/*  </div>*/}
+    <div className={'w-full h-full'}>
           <p className={`text-5xl font-thin`}>
               Dauren Tursynbek
           </p>
@@ -56,12 +41,12 @@ export default function Home() {
                   </Link>
         </div>
 
-        <div className={'absolute right-5 top-5 space-y-2'}>
+        <div className={'absolute right-5 top-5 space-y-4'}>
             <div>
                 <a href=''>
                     <picture>
-                        <source srcset='icons_white/Gmail_white.png' media="(prefers-color-scheme: dark)" />
-                            <img src='icons_black/Gmail_black.png' width={20} height={20} />
+                        {/*<source srcset='icons_white/Gmail_white.png' media="(prefers-color-scheme: dark)" />*/}
+                            <img src='icons_white/Gmail_white.png' width={20} height={20} />
                     </picture>
 
                 </a>
@@ -69,22 +54,23 @@ export default function Home() {
             <div>
                 <a href='https://github.com/dauren2210'>
                     <picture>
-                        <source srcset='icons_white/Github_white.png' media="(prefers-color-scheme: dark)"/>
-                            <img src='icons_black/Github_black.png' width={20} height={20}/>
+                        {/*<source srcset='icons_white/Github_white.png' media="(prefers-color-scheme: dark)"/>*/}
+                            <img src='icons_white/Github_white.png' width={20} height={20}/>
                     </picture>
                 </a>
             </div>
             <div>
                 <a href='https://www.linkedin.com/in/dtursynbek22/'>
                     <picture>
-                        <source srcset='icons_white/LinkedIN_white.png' media="(prefers-color-scheme: dark)"/>
-                            <img src='icons_black/LinkedIN_black.png' width={20} height={20}/>
+                        {/*<source srcset='icons_white/LinkedIN_white.png' media="(prefers-color-scheme: dark)"/>*/}
+                            <img src='icons_white/LinkedIN_white.png' width={20} height={20}/>
                     </picture>
                 </a>
             </div>
         </div>
 
       </div>
+
 
 
   )
